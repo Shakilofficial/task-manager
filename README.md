@@ -123,11 +123,9 @@ tasks-app/
 | Method | Endpoint                | Description        |
 | ------ | ----------------------- | ------------------ |
 | GET    | `/api/tasks`            | Fetch all tasks    |
-| POST   | `/api/tasks`            | Create a new task  |
-| GET    | `/api/tasks/:id`        | Get a single task  |
-| PUT    | `/api/tasks/:id`        | Update a task      |
+| POST   | `/api/tasks`            | Create a new task  
 | PATCH  | `/api/tasks/:id/toggle` | Toggle task status |
-| DELETE | `/api/tasks/:id`        | Delete a task      |
+
 
 **Response Format:**
 
