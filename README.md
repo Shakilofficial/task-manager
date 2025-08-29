@@ -71,7 +71,7 @@ npm install
 npm run dev
 ```
 
-Server runs at [http://localhost:3000](http://localhost:3000) by default.
+Server runs at [http://localhost:5000](http://localhost:5000) by default.
 
 ### 3️⃣ Setup the Frontend (Client)
 
@@ -88,7 +88,7 @@ Frontend runs at [http://localhost:5173](http://localhost:5173) by default.
 - **Client:**  
   Create a `.env` file in `client/`:
   ```env
-  VITE_API_BASE_URL=http://localhost:3000/api/tasks
+  VITE_API_BASE_URL=http://localhost:5000/api/tasks
   ```
 - **Server:**  
   Create a `.env` file in `server/` (optional):
