@@ -93,7 +93,7 @@ Frontend runs at [http://localhost:5173](http://localhost:5173) by default.
 - **Server:**  
   Create a `.env` file in `server/` (optional):
   ```env
-  PORT=3000
+  PORT=5000
   ```
 
 ---
