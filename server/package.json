@@ -1,0 +1,40 @@
+{
+  "name": "task-manager-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "description": "Tasks management server application built with Node.js, Express, and TypeScript.",
+  "repository": "https://github.com/shakilOfficial/task-manager.git",
+  "author": "Md. Shakil Hossain <mrshakilhossain@outlook.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "prettier": "npx prettier --ignore-path .prettierignore --check .",
+    "prettier:fix": "npx prettier --ignore-path .prettierignore --write .",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "typescript",
+    "task-manager"
+  ],
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "http-status-codes": "^2.3.0",
+    "zod": "^4.1.5"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.3.0",
+    "globals": "^16.3.0",
+    "prettier": "^3.6.2",
+    "ts-node-dev": "^2.0.0",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
+  }
+}
