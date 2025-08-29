@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import type { Task } from "@/interface";
-import { CheckCircle2, Circle } from "lucide-react";
+import { CheckCircle2, Circle, List } from "lucide-react";
 
 interface TaskListProps {
   tasks: Task[];
@@ -10,8 +10,10 @@ interface TaskListProps {
 const TaskList = ({ tasks, onToggleStatus }: TaskListProps) => {
   if (tasks.length === 0) {
     return (
-      <div className="text-center text-gray-500 py-4">
-        No tasks found. Add a task to get started!
+      <div className="flex flex-col items-center justify-center py-8 text-center">
+        <List className="w-12 h-12 text-gray-400 mb-3" />
+        <p className="text-gray-500 text-sm font-medium mb-2">No tasks found</p>
+        <p className="text-gray-400 text-xs">Add a task to get started!</p>
       </div>
     );
   }

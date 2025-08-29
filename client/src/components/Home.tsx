@@ -1,5 +1,6 @@
 import { taskApi } from "@/api/task";
 import type { Task } from "@/interface";
+import { Loader2 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import TaskFilter from "./task/TaskFilter";
@@ -45,7 +46,7 @@ const Home = () => {
       setTasks((prev) =>
         prev.map((task) => (task.id === id ? updatedTask : task))
       );
-      toast.success(`Task marked as ${updatedTask.status}`, {
+      toast.success(`${updatedTask.title} marked as ${updatedTask.status}`, {
         id: `toggle-task-${id}`,
       });
     } catch (err) {
@@ -59,15 +60,20 @@ const Home = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-2">
-      <div className="w-full max-w-2xl bg-white rounded-2xl shadow-xl p-4 md:p-8">
-        <h1 className="text-3xl font-bold text-gray-800 mb-8 text-center">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-4">
+      <div className="w-full max-w-2xl bg-white rounded-lg shadow-xl p-6 md:p-8">
+        <h1 className="text-3xl text-primary font-bold mb-8 text-center">
           Task Manager
         </h1>
         <TaskForm onAddTask={addTask} />
         <TaskFilter filter={filter} onChange={setFilter} />
         {isLoading ? (
-          <div className="text-center text-gray-500 py-2">Loading tasks...</div>
+          <div className="flex flex-col items-center justify-center py-8">
+            <Loader2 className="w-8 h-8 text-blue-600 animate-spin" />
+            <p className="mt-2 text-gray-600 text-sm font-medium">
+              Loading your tasks...
+            </p>
+          </div>
         ) : (
           <TaskList tasks={filteredTasks} onToggleStatus={toggleTaskStatus} />
         )}
